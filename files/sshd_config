@@ -4,6 +4,10 @@ Protocol 2
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 
+# Enable RSA so Azure DevOps can still connect :(
+PubkeyAcceptedKeyTypes=+ssh-rsa
+HostKeyAlgorithms +ssh-rsa
+
 # Faster connection
 # See: https://github.com/atmoz/sftp/issues/11
 UseDNS no
